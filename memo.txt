@@ -1,0 +1,9 @@
+sudo su - ec2-user
+cd ~
+sudo yum update -y
+sudo dnf install certbot -y
+curl -fsSL https://rpm.nodesource.com/setup_22.x | sudo bash -
+sudo yum install git nodejs -y
+sudo npm install -g pnpm
+
+sudo certbot certonly --webroot -w /var/www/html -d lets.takemo-chan.jp --email takemo101@gmail.com --agree-tos --noninteractive
